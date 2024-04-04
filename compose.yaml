@@ -1,0 +1,20 @@
+services:
+  backend:
+    build:
+      context: backend
+      target: builder
+    container_name: document-analyser-backend
+    environment:
+      PORT: 8000
+    ports:
+      - '8000:8000'
+    restart: "no"
+  frontend:
+    build:
+      context: frontend
+    container_name: document-analyser-frontend
+    environment:
+      PORT: 3000
+    ports:
+      - '3000:3000'
+    restart: "no"
