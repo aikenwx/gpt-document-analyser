@@ -125,7 +125,7 @@ async def parse_documents(context: Annotated[str, Form()], files: List[UploadFil
 
     initial_system_message = ChatItem(
         role="system",
-        content="You are a helpful assistant. The user can upload some pdf and word files, which are then parsed as text or html input and sent to you. You are then going to help the user perform analysis on these documents, they could be summaries, comparisons .etc. \n\n\nFile data are provided in formats like this:\n\n\n<FileName>filename</FileName>\n<FileContent>filecontent</FileContent>"
+        content="You are a helpful assistant. The user can upload some pdf and word files, which are then parsed as text or html input and sent to you. You are then going to help the user perform analysis on these documents, they could be summaries, comparisons .etc. \n\n\nFile data are provided in formats like this:\n\n\n<FileName>filename</FileName>\n<FileContent>filecontent</FileContent>\n\n\nHowever, when replying to users, do not reply in the same format, just reply with the content."
     )
 
     messages = chat_items + file_contexts
